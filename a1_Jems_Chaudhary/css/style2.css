@@ -1,0 +1,122 @@
+/* I Jems Chaudhary, 000814314 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else.
+*/
+
+#map{
+    width: 900px;
+    height: 500px;
+    margin: 10px;
+}
+
+.btnsComm{
+    background: none;
+    border: 2px solid brown;
+    margin: 15px;
+    
+}
+#btnCommunity{
+    margin-top:20px;
+}
+.btnsComm:hover{
+    background-color: lemonchiffon;
+    font-size: 20px;
+}
+
+#commMap{
+    width: 700px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+#section2{
+    margin: 20px;
+    margin-top:100px;
+    margin-bottom: 50px;
+}
+
+#details{
+    margin-top:30px;
+    border: 2px dashed lightsalmon;
+}
+
+#content{
+    margin: 20px;
+    margin-bottom: 40px;
+}
+p{
+    font-size: 15px;
+}
+
+#findRouteBtn {
+    background: none;
+    border: 2px solid black;
+    background-color: mediumaquamarine;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+#findRouteBtn:hover{
+    background-color: lightseagreen;
+    width: 120px;
+    height: 55px;
+    font-size: 23px;
+}
+
+#bigMap{
+    margin: 20px;
+}
+
+#locationB{
+    background-color: #FFFAFA;
+}
+
+#sec1Title{
+    margin-top: -125px;
+}
+
+#myLocBtn{
+    background: none;
+    background-color: lightsalmon;
+    border-radius: 50%;
+    font-weight: 700;
+    height: 40px;
+    width:110px;
+    border: 2px solid black;
+}
+#explanation{
+    font-size: 17px;
+}
+#resetBtn{
+    
+    font-weight: 700;
+    background: none;
+    margin:10px;
+    margin-left: 50px;
+    height: 50px;
+    width:140px;
+    border-radius: 50%;
+    background-color: lightskyblue;
+}
+
+#resetBtn:hover{
+    height: 53px;
+    background-color: rgb(49, 162, 231);
+    width:143px;
+}
+
+#travellingModeSection{
+    margin-left:25px;
+}
+.travelIcon{
+    margin:8px;
+    width: 33px;
+    height: 32px;
+}
+.travelIcon:hover{
+    border: 2px solid black;
+    
+    width: 35px;
+    height: 35px;
+}

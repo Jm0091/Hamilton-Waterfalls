@@ -1,0 +1,317 @@
+<!-- 
+    Maps and Geolocation:
+        - Two maps:
+                1. Small Map - for community and particular waterfall information
+                2. Big Map - getting user's input and find navigation between two points
+        - Extra feature - Travelling mode - driving/two_wheeler/walking
+        - Bootstrap theme taken from online sourse
+        
+
+    I Jems Chaudhary, 000814314 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else.
+
+    Resource Used:
+        1. Bootstrap theme (link: https://startbootstrap.com/theme/grayscale)
+        2. Images taken from google
+        3. Factual information taken from wikipedia and other reliable sites (link mentioned below)
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Waterfalls</title>
+    
+    
+
+
+    <link rel="icon" type="image/x-icon" href="assets/769087-200.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/style2.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Hamilton Waterfalls</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#section2">CommunityDescription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bigMap">Route</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Information</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contactSection">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Waterfalls Hamilton</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Lets explore the city of waterfalls</h2>
+                    <a class="btn btn-primary" href="#section2">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- Map with info window -->
+    <div id=section2 class="row border p1 s2">
+        <div id="left" class="col mt-2">
+            <div class="border-secondary">
+                <h2> D E S C R I P T I O N  <span style="font-size: 20px;"> &#160;  &#160; - There are 5 Communities</span></h2>
+            </div>
+            <div id="btnCommunity">
+                <button type="button" id="ancaster" class="btnsComm">Ancaster</button>
+                <button type="button" value="hamilton" id="hamilton" class="btnsComm">Hamilton</button>
+                <button type="button" value="stoneyCreek" id="stoneyCreek" class="btnsComm">stoneyCreek</button>
+                <button type="button" value="dundas" id="dundas" class="btnsComm">Dundas</button>
+                <button type="button" value="flamborough" id="flamborough" class="btnsComm">Flamborough</button></br>
+            </div>
+            <div id="details">
+                <h3 id="content"> 
+                    Click on any community for more details.</br>
+                    Map will show waterfalls for that community.
+                </h3>
+            </div>
+        </div>
+
+        <div id="right" class="col m-4">
+            <div id="commMap"></div>
+        </div>
+
+    </div>
+
+    <!--Map-->
+    
+    <div class="row" id="bigMap">
+        <div> <h2> Destination  &#160;N A V I G A T O R <span id="explanation">&#160;&#160; Click 'Locate Me' button for your location or type address in the field below. </span> </h2></div>
+        <div>
+            <span id="destinationA">Destination A:
+                <input type="text" id="userLocationA">  &#160;  &#160;<span id="OR">OR</span>&#160;  &#160;
+                <button type="button" id="myLocBtn">Locate Me</button>
+            </span>
+            <span> &#160;  &#160;  &#160;Destination B:</span> <input type="text" id="locationB" placeholder="Click any pin below"> 
+           
+            <span id="travellingModeSection">
+                <img src = "assets/img/car.png" alt="Two-Wheeler" class="travelIcon" id="car">
+                <img src = "assets/img/bicycle.jpg" alt="Two-Wheeler" class="travelIcon" id="twoWheeler">
+                <img src = "assets/img/walking.png" alt="Two-Wheeler" class="travelIcon" id="walking">
+            </span>
+            <button type="button" id="findRouteBtn">Direction</button>
+            <button type="button" id="resetBtn">Reset Map</button>
+
+        </div>
+        <div id="map" style="border: 2px solid black;"></div>
+
+        
+        
+    </div>
+    
+    
+
+
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4" id="sec1Title">Nature always heals soul</h2>
+                    <p class="text-white-50" >
+                        "WATERFALLS WOULDN'T SOUNG SO MELODIOUS IS THERE WERE NO ROCKS IN THEIR WAY"
+                        </br>
+                        -Rishabh Gautam
+                        </br></br>
+                        <img class="img-fluid" src="assets/img/waterfall1.jpg" alt="" />
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <!-- Featured Project Row-->
+            <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/HomeImage.PNG"
+                        alt="..." /></div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <!-- Information about waterfalls taken from: https://en.wikipedia.org/wiki/List_of_waterfalls_in_Hamilton,_Ontario-->
+                        <h4>How Hamilton is City of Waterfalls</h4>
+                        <p class="text-black-50 mb-0">It have more than 100 waterfalls and cascades, most of which are on or near the Bruce Trail as it winds through the Niagara Escarpment. </br>Ontario's internationally recognized Niagara Escarpment provides perfect geological conditions for waterfalls to occur, from Tobermory to Niagara Falls and formed in 5 communities: Hamilton, Ancaster, Stoney Creek, Dundas, Flamborough.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project One Row-->
+
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/waterfall2.png" alt="Webster'sFalls" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <!-- Information about fall taken from online site: https://www.world-of-waterfalls.com/waterfalls/canada-websters-falls/  And Wikipedia:https://en.wikipedia.org/wiki/Webster%27s_Falls-->
+                                <h4 class="text-white">Webster's Falls</h4>
+                                <p class="mb-0 text-white-50">Webster's Falls, according to Joe Hollick, has the highest number of vintage postcards bearing its image; this suggests that it has been the most frequently visited waterfall in Hamilton for more than a century.</br>Fall is 22m high and about 24m wide at its crest.</p>
+                                <hr class="d-none d-lg-block mb-0 ms-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6"><img class="img-fluid" src="assets/img/waterfall3.jpg" alt="AlboinFalls" /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Albion Falls</h4>
+                                <p class="mb-0 text-white-50">The ravine at the Albion Falls has a legend of the Lover's Leap. The story is that early in the 19th century young Jane Riley, disappointed in love with Joseph Rousseau, stood at the top of a steep cliff not far from thundering Albion Falls and flung herself to the bottom 100 ft (30 m) below. </p>
+                                <hr class="d-none d-lg-block mb-0 me-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Email address input-->
+                        <div class="row input-group-newsletter">
+                            <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                        </div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3 mt-2 text-white">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-black" id="contactSection">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">100 Main St E, Hamilton, ON.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50"><a href="mailto:000814314@mohawkcollege.ca">000814314@mohawkcollege.ca</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">+1 (249) 993-0209</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="https://www.linkedin.com/in/JemsC/"><i class="fab fa-linkedin"></i></a>
+                <a class="mx-2" href="https://www.facebook.com/jems.chaudhary.712/"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="https://github.com/Jm0091"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Assignment01 - Sept, 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+    <!--JSSSSS-->
+    <!-- Js file for Waterfall data taken from open hamilton website-->
+    <script src="js/waterfall.js"></script>
+    <!-- Js file for geolocation -->
+
+    <script src="js/script2.js"></script>
+    
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbsua4EskTMpwMIvO5vkvTgw35rhCwTfs&callback=initMap">
+        
+    </script>
+</body>
+
+</html>
